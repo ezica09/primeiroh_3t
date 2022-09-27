@@ -1,1 +1,7 @@
-# primeiroh_3t
+# Terceiro Trimestre
+
+## Identificação
+ Ezequiel - Nr . 34
+ 
+ ## conteudo
+ HTML, CSS e javaScript
