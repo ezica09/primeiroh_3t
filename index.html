@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -9,8 +10,19 @@
 
 </head>
 <body>
-    <button onclick="mechama('ezequiel')">uma tabuada</button>
-    <button onclick="escreva()">tabuada</button>
-    <button onclick="quadrado()">quadrado</button>
+
+    valor: <input id="val" type="text"><br>;
+    juros: <input id="ju" type="text"><br>;
+    meses: <input id="mes" type="text"><br>;
+    let resultado = 0;
+
+    for(let i = 1; i <= mes; i++){
+        resultado += valor * (i+(juros/100))
+    }
+
+    }
+    <button onclick="total()">enviar</button>
+
+
 </body>
 </html>
