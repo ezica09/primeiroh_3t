@@ -33,3 +33,10 @@ function escreva () {
             document.write('o quadrado de'+ i + " é " + (i*i)+ "<br>")
         }
     }
+    function total(){
+        let valor = document.getElementById("val").value;
+        let juros = document.getElementById("ju").value;
+        let resultado = valor * (1+(juros/100));
+        document.write("o resultado é " + resultado);
+    }
+
