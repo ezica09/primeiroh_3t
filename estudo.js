@@ -4,7 +4,7 @@
 
 var tabuada = 8;
 
-function mechama (ezequiel){
+function meChame(ezequiel){
     document.write("<h1>Tabuada do " + tabuada + "</h1>");
     document.write(tabuada + " x 1 = "+(tabuada*1)+"<br>");
     document.write(tabuada + " x 2 = "+(tabuada*2)+"<br>");
@@ -20,23 +20,49 @@ function mechama (ezequiel){
     
 }
 
+function escreva(){
+    for(var i = 1; i < 11; i++){
+        document.write(tabuada + " x " + i + " = "+(tabuada*i)+"<br>");
+    }
+}
 
-function escreva () {
-     for(var i = 1; i < 10; i++){ 
-          document.write(tabuada + " x " + i + " = " +(tabuada*i)+"<br");
-     }
+function quadrado(){
+    for(var i = 2; i < 101; i++){
+        document.write("O Quadrado de " + i + " é " + (i*i)+ "<br>")
+    }
+
+}
+function total(){
+    let valor = document.getElementById("val").value;
+    let juros = document.getElementById("ju").value;
+    let mes = document.getElementById("mes").value;
+    let resultado = 0;
+    for(let i = 1; i <= mes; i++){
+        resultado = valor * (1+(juros/100));
+        valor = resultado;
+    }
     
-    }
+    document.write("O Resultado é " + resultado);
+}
 
-    function quadrado (){
-        for(var i = 2; i < 21; i++){
-            document.write('o quadrado de'+ i + " é " + (i*i)+ "<br>")
-        }
-    }
-    function total(){
-        let valor = document.getElementById("val").value;
-        let juros = document.getElementById("ju").value;
-        let resultado = valor * (1+(juros/100));
-        document.write("o resultado é " + resultado);
-    }
-
+function soma(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let n3 = document.getElementById("n3").value;
+    let r = Number(n1) + Number(n2) + Number(n3);
+    document.getElementById("resultado").innerHTML = 
+}
+function média(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let n3 = document.getElementById("n3").value;
+    let r = (Number(n1) + Number(n2) + Number(n3))/3;
+    document.getElementById("resultado").innerHTML = r;
+}
+function necessário(){
+    let n1 = document.getElementById("n1").value;
+    let n2 = document.getElementById("n2").value;
+    let n3 = document.getElementById("n3").value;
+    let r = 180 - (Number(n1) + Number(n2) + Number(n3));
+    document.getElementById("resultado").innerHTML = r;
+}
