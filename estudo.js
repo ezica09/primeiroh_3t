@@ -37,9 +37,23 @@ function total(){
     let juros = document.getElementById("ju").value;
     let mes = document.getElementById("mes").value;
     let resultado = 0;
+
     for(let i = 1; i <= mes; i++){
         resultado = valor * (1+(juros/100));
-        valor = resultado;
+        valor = resultado; 
+
+        if(!Number(valor)) {
+            alert('0 valor deve ser um numero');
+            return }
+
+            if(!Number (juros)) {
+                alert('0 valor deve ser um numero');
+                return }
+
+                if(!Number(mes)) {
+                    alert('0 valor deve ser um numero');
+                    return }
+        
     }
     
     document.write("O Resultado é " + resultado);
@@ -50,7 +64,7 @@ function soma(){
     let n2 = document.getElementById("n2").value;
     let n3 = document.getElementById("n3").value;
     let r = Number(n1) + Number(n2) + Number(n3);
-    document.getElementById("resultado").innerHTML = 
+    document.getElementById("resultado").innerHTML = r ; 
 }
 function média(){
     let n1 = document.getElementById("n1").value;
