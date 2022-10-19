@@ -1,1 +1,16 @@
 
+.caulculadora {
+    padding: 10px;
+    background: blueviolet;
+    width: 200px;
+}
+.nota{
+    padding: 10px;
+    background: blueviolet;
+    width: 200px;
+}
+ #btncalc {
+     width: 20px;
+     padding: 10px;
+     background: brown;
+ }
