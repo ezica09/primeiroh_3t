@@ -1,12 +1,41 @@
 
-.calc {
+.calculadora {
     padding: 10px;
-    background:#f05404
+    background: rgb(186, 3, 223);
+    width: 200px;
+    border-radius: 23px;
+    
+}
+.listamensal {
+    padding: 10px;
+    background: rgb(3, 54, 223);
+    width: 200px;
+    border-radius: 23px;
 }
 
-#BtnCalc {
+.calculadora input {
+    background: black;
+    color: white;
+    border-radius: 10px;
+    height: 20px;
+}
+.spResul {
+    background:black;
+    color: red;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+#btnCalc {
     width: 50px;
     padding: 5px;
-    background: #f05404;
+    background: rgb(255, 0, 0);
+    margin-top: 10px;
+    border-radius: 2122222px;
 }
-
+#btnCalc:hover {
+    background: black;
+    color: white;
+    cursor: pointer  ;
+}
