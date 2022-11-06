@@ -1,72 +1,34 @@
-//alert("");
-//console.log("");
-//document.write("");
+use strict";
 
-var tabuada = 8;
+let button = document.getElementById('calcular');
+let button_limpar = document.getElementById('limpar');
 
-function meChame(nome) {
-    document.write("<h1>Tabuada do " + tabuada + "</h1>");
-    document.write(tabuada + " x 1 = " + (tabuada * 1) + "<br>");
-    document.write(tabuada + " x 2 = " + (tabuada * 2) + "<br>");
-    document.write(tabuada + " x 3 = " + (tabuada * 3) + "<br>");
-    document.write(tabuada + " x 4 = " + (tabuada * 4) + "<br>");
-    document.write(tabuada + " x 5 = " + (tabuada * 5) + "<br>");
-    document.write(tabuada + " x 6 = " + (tabuada * 6) + "<br>");
-    document.write(tabuada + " x 7 = " + (tabuada * 7) + "<br>");
-    document.write(tabuada + " x 8 = " + (tabuada * 8) + "<br>");
-    document.write(tabuada + " x 9 = " + (tabuada * 9) + "<br>");
-    document.write(tabuada + " x 10 = " + (tabuada * 10) + "<br");
-    document.write("Feita por " + nome);
+button.addEventListener('click',calculo);
+button_limpar.addEventListener('click',limpar);
 
-}
-
-function escreva() {
-    for (var i = 1; i < 11; i++) {
-        document.write(tabuada + " x " + i + " = " + (tabuada * i) + "<br>");
+function calculo(e){
+    e.preventDefault();//para impedir que a página HTML sofra refresh
+    let num1 = parseFloat(document.getElementById('num1').value);
+    let num2 = parseFloat(document.getElementById('num2').value);
+    let num3 = parseFloat(document.getElementById('num3').value);
+    let delta = Math.pow(num2,2) - 4*num1*num3;
+    alert(`O delta é: ${delta}`);
+    if(delta > 0){
+        let raiz1 = (-num2 + Math.sqrt(delta) )/(2*num1);
+        let raiz2 = (-num2 - Math.sqrt(delta) )/(2*num1);
+        document.getElementById("resultado").innerHTML = "Raiz 1 = " + raiz1 + "<br>" + "Raiz 2 = " + raiz2; 
+        
+    }else if (delta===0){
+            let raizUnica = (-num2 + Math.sqrt(delta) )/(2*num1);
+            document.getElementById("resultado").innerHTML = "Raiz única = " + raizUnica;
+    }else if (delta < 0){
+        document.getElementById("resultado").innerHTML = "Delta < 0, não existem raízes no conjunto dos números reais.";
     }
 }
 
-function quadrado() {
-    for (var i = 2; i < 101; i++) {
-        document.write("O Quadrado de " + i + " é " + (i * i) + "<br>")
-    }
-}
-function moeda(atual){
-    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-}
-
-function total() {
-    let valor = document.getElementById("val").value;
-    let juros = document.getElementById("ju").value;
-    let mes = document.getElementById("mes").value;
-    if (!Number(valor)) {
-        alert("O valor deve ser um número.");
-        document.getElementById("val").value = "";
-        document.getElementById("val").focus();
-        return
-    }
-    if (!Number(juros)) {
-        alert("O valor dos juros deve ser um número.");
-        document.getElementById("ju").value = "";
-        document.getElementById("ju").focus();
-        return
-    }
-    if (!Number(mes)) {
-        alert("A quantide de meses deve ser um número.");
-        document.getElementById("mes").value = "";
-        document.getElementById("mes").focus();
-        return
-    }
-
-    let resultado = 0;
-    let texto = "";
-    for (let i = 1; i <= mes; i++) {
-        resultado = valor * (1 + (juros / 100));
-        valor = resultado;
-         texto += "Mês " + i + " valor: " + moeda(resultado) + "<br>";
-        //document.write("Mês " + i + " valor: " + moeda(resultado) + "<br>");
-    }
-    document.getElementById("meses").innerHTML = texto;
-    document.getElementById("resultado").innerHTML = "Total: " + moeda(resultado);
-    //document.write( "O Resultado é " + moeda(resultado) );
+function limpar(e){
+    document.getElementById('num1').value = " ";
+    document.getElementById('num2').value = " ";
+    document.getElementById('num3').value = " ";
+    document.getElementById('resultado').innerHTML = null;
 }
