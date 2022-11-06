@@ -1,41 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: auto;
+}
 
-.calculadora {
-    padding: 10px;
-    background: rgb(186, 3, 223);
-    width: 200px;
-    border-radius: 23px;
+header{
+    margin-top: 20px;
+    width: 60%;
+    text-align: center;
+    background-color: blue;
+    color: aliceblue;
+    padding: 5px;
+}
+
+form{
+    margin-top: 10px;
+    width: 60%;
+    text-align: center;
+}
+
+form img{
+    float: left;
     
 }
-.listamensal {
-    padding: 10px;
-    background: rgb(3, 54, 223);
-    width: 200px;
-    border-radius: 23px;
+
+input{
+    border-radius: 5px;
+    padding: 5px;
 }
 
-.calculadora input {
-    background: black;
-    color: white;
-    border-radius: 10px;
-    height: 20px;
-}
-.spResul {
-    background:black;
-    color: red;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 15px;
+.campos{
+    margin-top: 5px;
 }
 
-#btnCalc {
-    width: 50px;
-    padding: 5px;
-    background: rgb(255, 0, 0);
+.buttons{
     margin-top: 10px;
-    border-radius: 2122222px;
 }
-#btnCalc:hover {
-    background: black;
-    color: white;
-    cursor: pointer  ;
+
+button{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: green;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+#resultado{
+    margin-top: 10px;
+    font-weight: bold;
 }
